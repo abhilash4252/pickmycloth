@@ -7,8 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <section class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+    <ul class="nav navbar-nav navbar-left">
+      <div class="dropdown">
+        <li class="dropbtn">Shop</li>
+        <div class="dropdown-content">
+          <a href="#">Men Fabrics</a>
+          <a href="#">Women Fabrics</a>
+          <a href="#">Get a Desigener</a>
+        </div>
+      </div>
+      <li><%= link_to "About", '#' %></li>
+    </ul>
+    </nav>
+    <div>
+      <%= link_to "PICK my CLOTH", '#', id: "logo" %>
+    </div>
+    <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Help",   '#' %></li>
+      <% if customer_signed_in? %>
+        <li><%= link_to "Log Out", destroy_customer_session_path, method: :delete%></li>
+      <% else %>
+        <li> <%= link_to "Log in", new_customer_session_path %></li>
+      <% end %>
+    </ul>
+    </nav>
+  </div>
+  </section>
+  <section>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+  </section>
 
 </body>
 </html>
