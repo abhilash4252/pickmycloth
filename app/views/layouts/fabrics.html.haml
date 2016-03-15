@@ -1,0 +1,17 @@
+.container
+  %table
+    %tbody
+      %tr
+        %td.filter
+          %div.gallery
+            .filter-title
+              Style
+            .filter-body
+        %td
+          %div.row
+            %div
+              - @fabrics.each do |fabric|
+                .gallery-item.col-xs-6.col-xxs-12
+                  =fabric.name
+                  =fabric.fabric_type
+                  =fabric.price

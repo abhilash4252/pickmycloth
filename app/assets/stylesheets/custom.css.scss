@@ -116,3 +116,33 @@ body {
   font-size: 15px;
   padding: 10px;
 }
+
+.filter {
+  width: 14%;
+  padding-right: 4px;
+  padding-top: 3px;
+  display: table-cell !important;
+}
+
+.filter-title {
+  font-family: 'Brown','Avenir Next W02','Avenir',Helvetica,sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: .5em;
+}
+.gallery {
+  width: 161px;
+  border: 1px solid #e0e0e0;
+  padding: 12px 14px 12px 14px;
+  line-height: 20px;
+  margin-right: 2px;
+}
+
+.gallery-item {
+  padding: 12px 15px 14px 14px;
+  border: 1px solid #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+}
