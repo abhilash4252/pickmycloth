@@ -146,3 +146,52 @@ body {
   box-sizing: border-box;
   cursor: pointer;
 }
+
+.item-description{
+  width: 190px;
+  padding-right: 5px;
+}
+
+.gallery-text-div {
+  overflow: hidden;
+  height:172px;
+}
+
+.gallery-item-title {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: .5em;
+}
+
+.image-description {
+  height: 172px;
+  width: 50%;
+}
+
+.filter {
+  vertical-align: top;
+}
+
+.gallery-item tr{
+  vertical-align: top;
+}
+
+.indent-1 {
+  height: 1px;
+  clear: both;
+}
+
+.indent-4 {
+  height: 4px;
+  clear: both;
+}
+
+
+.gallery {
+  padding-left: 15px;
+}
+
+.gallery-item:hover {
+  border: 1px solid antiquewhite;
+}

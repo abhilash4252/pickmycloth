@@ -1,0 +1,2 @@
+module Order::FabricsHelper
+end

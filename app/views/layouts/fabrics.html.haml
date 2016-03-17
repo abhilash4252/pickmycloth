@@ -7,11 +7,26 @@
             .filter-title
               Style
             .filter-body
-        %td
+        %td.gallery
           %div.row
             %div
               - @fabrics.each do |fabric|
-                .gallery-item.col-xs-6.col-xxs-12
-                  =fabric.name
-                  =fabric.fabric_type
-                  =fabric.price
+                =link_to order_fabric_path(fabric) do
+                  .gallery-item.col-xs-6.col-xxs-12
+                    %table
+                      %tbody
+                        %tr
+                          %td.item-description
+                            .gallery-text-div
+                              .gallery-item-title
+                                =fabric.name
+                              .indent-1
+                              %strong
+                                =fabric.price
+                              .indent-4
+                              .gallery-item-text
+                                =fabric.desc
+
+                          %td.image-description
+                            = image_tag 'http://cdn.propercloth.com/pictures/1814.jpg'
+
