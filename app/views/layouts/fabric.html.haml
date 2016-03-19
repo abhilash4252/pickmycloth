@@ -1,0 +1,15 @@
+.container
+  .row.marginTop30px
+    .col-xs-6.image-preview
+      = image_tag 'http://cdn.propercloth.com/pictures/1814.jpg'
+
+    .col-xs-6
+      %h2
+        = @fabric.first.name
+      %div
+        %strong
+          = number_to_currency(@fabric.first.price, unit: "Rs. ",seperator: ",", delimeter: "")
+      %div
+        = link_to "Order Cloth", order_index_path(fabric_id: @fabric.first.id, price: @fabric.first.price), { method: :post,  class: "btn btn-primary" }
+      %button.btn
+        Design a Shirt
