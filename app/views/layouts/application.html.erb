@@ -15,8 +15,8 @@
         <li class="dropbtn">Shop</li>
         <div class="dropdown-content">
           <%= link_to  "Men", shop_mens_fabrics_path %>
-          <%= link_to  "Women", "#" %>
-          <%= link_to  "Kids", "#" %>
+          <%= link_to  "Women", shop_womens_fabrics_path %>
+          <%= link_to  "Kids", shop_kids_fabrics_path %>
           <%= link_to  "Designer", designers_path %>
         </div>
       </div>
@@ -24,11 +24,11 @@
     </ul>
     </nav>
     <div>
-      <%= link_to "PICK my CLOTH", '#', id: "logo" %>
+      <%= link_to "PICK my CLOTH", '/', id: "logo" %>
     </div>
     <nav>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Help",   '#' %></li>
+      <li><%= link_to "Help", static_pages_help_path %></li>
       <% if customer_signed_in? %>
         <li><%= link_to "Log Out", destroy_customer_session_path, method: :delete%></li>
       <% else %>

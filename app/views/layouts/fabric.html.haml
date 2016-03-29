@@ -6,10 +6,26 @@
     .col-xs-6
       %h2
         = @fabric.first.name
+
       %div
         %strong
           = number_to_currency(@fabric.first.price, unit: "Rs. ",seperator: ",", delimeter: "")
       %div
-        = link_to "Order Cloth", order_index_path(fabric_id: @fabric.first.id, price: @fabric.first.price), { method: :post,  class: "btn btn-primary" }
-      %button.btn
-        Design a Shirt
+        = form_tag order_index_path(fabric_id: @fabric.first.id, price: @fabric.first.price), method: :post do
+          .row.form-group
+            = label_tag :quantity, "Quantity in meters", class: "control-label text-uppercase"
+            .input-group
+              = number_field_tag :quantity , params[:quantity], class: 'form-control'
+          .row.form-group
+            = label_tag :want_a_designer, "Need a Designer", class: "control-label text-upercase"
+            .input-group
+              %div
+                = check_box_tag :Yes, nil, params[:Yes] == "on"
+                = label_tag :Yes, "Yes", class: "control-label"
+              %div
+                = check_box_tag :No, nil, params[:No] == "on"
+                = label_tag :No, "No", class: "control-label"
+
+          .row
+            = submit_tag "Order Cloth", class: "btn btn-primary"
+        = link_to "Design a Shirt", order_index_path(design: true, fabric_id: @fabric.first.id, price: @fabric.first.price), { method: :post, class: "btn" }

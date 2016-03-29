@@ -1,0 +1,2 @@
+module Shop::WomensFabricsHelper
+end

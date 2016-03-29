@@ -1,8 +1,16 @@
 class CustomerMailer < ApplicationMailer
-  default from: "from@example.com"
+  default from: "pickmycloth@gmail.com"
 
-  def order_confirmation(customer)
+  def order_confirmation(customer, order)
     @customer = customer
-    mail(to: @customer.email, subject: 'Sample Email')
+    @order = order
+    mail(to: @customer.email, subject: "Order Confirmation(Order - #{@order.id})")
   end
+
+  def order_design_confirmation(customer, order)
+    @customer = customer
+    @order = order
+    mail(to: @customer.email, subject: "Order Confirmation(Order - #{@order.id})")
+  end
+
 end

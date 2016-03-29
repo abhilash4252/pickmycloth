@@ -2,7 +2,11 @@
   = "Hi #{@customer.firstname}!"
   %br
   = "Your Order for #{Fabric.where(id: @order.fabric_id).first.name} of Rs.#{@order.price} has been confirmed."
-
+  %br
+  Thank you for choosing our designer. Our Executive 
+  %strong
+    Mr. Ram Kalyan
+  will come to your address and take your sizes
 %div
   Regards,
   %br

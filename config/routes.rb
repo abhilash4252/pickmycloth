@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'static_pages/help'
    namespace :shop do
       resources :mens_fabrics
+      resources :womens_fabrics
+      resources :kids_fabrics
   end
   resources :order
   resources :designers
