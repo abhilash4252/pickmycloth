@@ -7,7 +7,9 @@ class OrderController < ApplicationController
     order.fabric_id = params[:fabric_id]
     order.designer_id = params[:designer_id] if params[:designer_id]
     order.price = params[:price]
-    order.save!
+    if order.save!
+      CustomerMailer.order_confirmation(current_customer).deliver
+    end
     render 'static_pages/home'
   end
 end
