@@ -3,7 +3,6 @@ class OrderController < ApplicationController
 
   def create
     order = Order.new
-    byebug
     order.customer_id = current_customer.id
     order.fabric_id = params[:fabric_id]
     order.designer_id = params[:designer_id] if params[:designer_id]
