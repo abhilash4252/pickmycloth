@@ -20,11 +20,9 @@ body {
    text-decoration: none;
  }
  .hero {
-   background: #ddd url(https://cdn.propercloth.com/images/home2/hero-lrg-winter.jpg) no-repeat 20% 50%;
+   background: #ddd image-url('main.png') no-repeat 20% 50%;
    background-size: cover;
-   height: 80%;
-   height: 80vh;
-   position: relative;
+   height: 100vh;
  }
  .dark {
    padding: 0px !important;
@@ -203,4 +201,10 @@ body {
 .image-preview img{
   width: 100%;
 }
+.new-form {
+  margin-left: 100px;
+}
 
+.image-description img {
+  width: 100%;
+}

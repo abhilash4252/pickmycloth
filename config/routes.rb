@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :womens_fabrics
       resources :kids_fabrics
   end
+   namespace :admin do
+     resources :inventory
+     post :create_new_fabric
+   end
   resources :order
   resources :designers
 end

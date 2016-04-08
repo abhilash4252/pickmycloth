@@ -1,7 +1,7 @@
 .container
   .row.marginTop30px
     .col-xs-6.image-preview
-      = image_tag 'http://cdn.propercloth.com/pictures/1814.jpg'
+      = image_tag @fabric.first.image_url
 
     .col-xs-6
       %h2
@@ -12,11 +12,11 @@
           = number_to_currency(@fabric.first.price, unit: "Rs. ",seperator: ",", delimeter: "")
       %div
         = form_tag order_index_path(fabric_id: @fabric.first.id, price: @fabric.first.price), method: :post do
-          .row.form-group
+          .form-group
             = label_tag :quantity, "Quantity in meters", class: "control-label text-uppercase"
             .input-group
               = number_field_tag :quantity , params[:quantity], class: 'form-control'
-          .row.form-group
+          .form-group
             = label_tag :want_a_designer, "Need a Designer", class: "control-label text-upercase"
             .input-group
               %div
@@ -26,6 +26,6 @@
                 = check_box_tag :No, nil, params[:No] == "on"
                 = label_tag :No, "No", class: "control-label"
 
-          .row
+          %div
             = submit_tag "Order Cloth", class: "btn btn-primary"
         = link_to "Design a Shirt", order_index_path(design: true, fabric_id: @fabric.first.id, price: @fabric.first.price), { method: :post, class: "btn" }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319104947) do
+ActiveRecord::Schema.define(version: 20160408063327) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160319104947) do
     t.text     "sizes"
     t.string   "color"
     t.text     "desc"
+    t.string   "image"
   end
 
   create_table "orders", force: :cascade do |t|

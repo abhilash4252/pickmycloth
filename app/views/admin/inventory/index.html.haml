@@ -1,0 +1,18 @@
+.new-form
+  = form_for admin_inventory_index_path, method: :post, html: {multipart: true } do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name
+    .form-group
+      = f.label :price
+      = f.number_field :price
+    .form-group
+      = f.label :fabric_type
+      = f.select :fabric_type, options_for_select([['Men', 'men'], ['Women', 'women'], ['Kids', 'kids']], params[:fabric_type])
+    .form-group
+      = f.label :image
+      = f.file_field :image
+    .form-group
+      = f.submit "Add", class: 'btn btn-primary'
+
+
